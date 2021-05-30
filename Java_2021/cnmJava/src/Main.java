@@ -7,7 +7,14 @@
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+
+import cnmInterface.Fish;
+
 import java.util.Random;
+import java.util.ArrayList;
+import cnmJava.A;
+import cnmJava.B;
+import cnmInterface.*;
 
 public class Main {
 	
@@ -36,8 +43,16 @@ public class Main {
 		return true;
 	}
 	
+	static int fibonacci(int n) {
+		return n < 2 ? 1 : fibonacci(n-1) + fibonacci(n-2);
+	}
+	
+	static int factorial(int n) {
+		return n < 2 ? 1 : n * factorial(n-1);
+	}
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// test
 		System.out.println("\n=== Get Started ===");
 		System.out.println("hello TS");
 		System.out.println("hello SCY");
@@ -132,6 +147,106 @@ public class Main {
 		}
 		boolean legalDate = setDate(2021, 2, 31);
 		System.out.println(String.format("setDate(2021, 2, 31) : %s", legalDate));
+		
+		System.out.println("\n=== Loop ===");
+		/*
+		 * [ loop ]
+		 * ===
+		 * while
+		 * do while
+		 * for
+		 * ===
+		 * */
+		int[] numbers = { 1, 2, 3, 4 };
+		for(int i=0; i<numbers.length; ++i) {
+			System.out.println(String.format("%s, %s", i, numbers[i]));
+		}
+		System.out.println();
+		
+		int i = 0;
+		while(i < numbers.length) {
+			System.out.println(String.format("%s, %s", i, numbers[i]));
+			i++;
+		}
+		System.out.println();
+		
+		i = numbers.length - 1;
+		do {
+			System.out.println(String.format("%s, %s", i, numbers[i]));
+			--i;
+		} while (i >= 0);
+		System.out.println();
+		
+		for(int elem : numbers) {
+			System.out.print(elem + " ");
+		}
+		System.out.println();
+		
+		System.out.println("\n=== Wrapper Class ===");
+		/*
+		 * [ wrapper class ]
+		 * ===
+		 * provides a way to user primitive data types as reference data types
+		 * 
+		 * | primitive		| wrapper
+		 * ==========================
+		 * | char			| Character
+		 * | int			| Integer
+		 * | double			| Double
+		 * | boolean		| Boolean
+		 * 
+		 * # same concept in C#
+		 * 
+		 * (C I D B)
+		 * ===
+		 * */
+		
+		Character a1 = 'c';
+		Integer a2 = 69;
+		Boolean a3 = true;
+		Double a4 = 3.14;
+		String a5;
+		a5 = a3 ? "true" : "false";
+		System.out.println(a5);
+		
+		System.out.println("\n=== Class ===");
+		Wife myWife = new Wife();
+		System.out.println(myWife.toString());
+		Wife myWife2 = new Wife("SCY", 35);
+		System.out.println(myWife2.toString());
+		
+		// B b1 = new B(1); // error out
+		// System.out.println(b1.toString());
+		
+		
+		System.out.println("\n=== Datastructure ===");
+		ArrayList<String> wives = new ArrayList<String>();
+		wives.add("TS");
+		wives.add("SCY");
+		for(int j=0; j<wives.size(); ++j) {
+			System.out.print(wives.get(j) + " ");
+		}
+		System.out.println();
+		System.out.println(wives);
+		
+		wives.stream().forEach((elem)->{
+			System.out.print(elem + " ");
+		});
+		System.out.println();
+		
+		// interface
+		Fish fish = new Fish();
+		fish.hunt();
+		fish.flee();
+		
+		System.out.println("\n=== Algorithm ===");
+		/*
+		 * [ algorithm ]
+		 * ===
+		 * 
+		 * ===
+		 * 
+		 * */
 		
 	}
 
