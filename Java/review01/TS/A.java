@@ -1,0 +1,5 @@
+package TS;
+
+class A {
+
+}
