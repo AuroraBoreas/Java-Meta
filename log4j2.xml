@@ -1,5 +1,5 @@
-<!-- put this file under src/main/resources/ -->
 log4j2.xml<?xml version="1.0" encoding="UTF-8"?>
+<!-- put this file under src/main/resources/ -->
 <Configuration status="WARN" monitorInterval="30">
     <!-- Logging Properties -->
     <Properties>
